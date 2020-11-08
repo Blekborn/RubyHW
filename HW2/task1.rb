@@ -38,5 +38,13 @@ j = numbers.each_with_index.max[1]
 numbers[i], numbers[j] = numbers[j], numbers[i]
 p numbers
 p "-------------"
+q = 0
+min = numbers.min
+while numbers[q] != min
+  el = numbers[q]
+  q += 1
+  p el
+end
+p "-------------"
 p numbers.min(3)
 p "-------------"
