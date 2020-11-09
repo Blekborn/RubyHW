@@ -24,15 +24,14 @@ p numbers.map { |x| x.to_f / 10 }
 p "-------------"
 new_mass = ('a'..'z').to_a
 mass_abc = Array.new()
-(0..numbers.size - 1).each do |i|
+(0..numbers.size - 1).each do |u|
   (0..new_mass.size - 1).each do |y|
-    if numbers[i] == y
+    if numbers[u] == y
       p mass_abc << new_mass[y]
     end
   end
 end
 p "-------------"
-
 i = numbers.each_with_index.min[1]
 j = numbers.each_with_index.max[1]
 numbers[i], numbers[j] = numbers[j], numbers[i]
