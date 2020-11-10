@@ -1,0 +1,3 @@
+class Parrot < Pet
+
+end
