@@ -1,3 +1,0 @@
-class Parrot < Pet
-
-end
