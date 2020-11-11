@@ -15,7 +15,7 @@ class Pet
     @st_toilet = ""
     @sleeping = false
   end
-
+####
   def add_pet
     p "Как назовешь питомца?"
     name = gets.chomp
