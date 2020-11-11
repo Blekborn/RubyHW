@@ -14,8 +14,27 @@ class Pet
     @toilet = 9
     @st_toilet = ""
     @sleeping = false
-    p "#{name}"
   end
+
+  def add_pet
+    p "Как назовешь питомца?"
+    name = gets.chomp
+    p "Имя твоего питомца #{name}!"
+    p "Выбирите жывотное: попугай, кот, собака?"
+    animal_name = gets.chomp
+    if animal_name == "попугай"
+      #@pet = Parrot.new(name)
+    elsif animal_name == "кот"
+      #@pet = Cat.new(name)
+    elsif animal_name == "собака"
+      p "ok"
+      #@pet = Dog.new(name)
+    else
+      p "Не того выбрал животного!"
+    end
+    #p "животное = #{@pet.class}, его имя =  #{@pet.name}"
+  end
+
 
   def pet_inside
     p "-----------------------------------------------------------------------------"
@@ -166,8 +185,8 @@ class Pet
     end
   end
 end
-pet = Pet.new("H")
-pet.pet_inside
+Pet.new.pet_inside
+
 pet.minus_day
 pet.minus_day
 pet.minus_day
