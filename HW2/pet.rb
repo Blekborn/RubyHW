@@ -3,38 +3,19 @@ class Pet
 
   def initialize(name)
     @name = name
-    @life = 10 #жизнь
+    @life = 10
     @st_life = ""
-    @hunger_indicator = 10 #показатель голода
+    @hunger_indicator = 10
     @hunger = ""
-    @mood = 10 #настроенеие
-    @moods = "" #настрения
-    @sleep_rate = 10 #показатель сна
+    @mood = 10
+    @moods = ""
+    @sleep_rate = 10
     @sleep = ""
     @toilet = 9
     @st_toilet = ""
     @sleeping = false
+    p "#{name}"
   end
-####
-  def add_pet
-    p "Как назовешь питомца?"
-    name = gets.chomp
-    p "Имя твоего питомца #{name}!"
-    p "Выбирите жывотное: попугай, кот, собака?"
-    animal_name = gets.chomp
-    if animal_name == "попугай"
-      #@pet = Parrot.new(name)
-    elsif animal_name == "кот"
-      #@pet = Cat.new(name)
-    elsif animal_name == "собака"
-      p "ok"
-      #@pet = Dog.new(name)
-    else
-      p "Не того выбрал животного!"
-    end
-    #p "животное = #{@pet.class}, его имя =  #{@pet.name}"
-  end
-
 
   def pet_inside
     p "-----------------------------------------------------------------------------"
@@ -51,13 +32,13 @@ class Pet
 
     case @hunger_indicator
     when 8..10
-      @hungry = "сыт)"
+      @hunger = "сыт)"
     when 4..7
-      @hungry = "Вроде голоден, а вроде и нет."
+      @hunger = "Вроде голоден, а вроде и нет."
     else
-      @hungry = "Голодный!"
+      @hunger = "Голодный!"
     end
-    p "Питание (1-10) сейчас #{@hunger_indicator}. #{@hungry}"
+    p "Питание (1-10) сейчас #{@hunger_indicator}. #{@hunger}"
 
     case @sleep_rate
     when 8..10
@@ -87,62 +68,119 @@ class Pet
     else
       @moods = "Я в гневе."
     end
-    p "Настроение (1-10) сейчас #{@mood}. #{@smoods}"
+    p "Настроение (1-10) сейчас #{@mood}. #{@moods}"
     p "-----------------------------------------------------------------------------"
   end
 
-  def feed #покормить
+  def commands
+    command = gets.strip.downcase
+  end
+  def com_pet
+    while true
+      command = commands
+      case command
+      when 'feed'
+        @pet.feed
+      when 'play'
+        @pet.play
+      when 'walk'
+        @pet.walk
+      when 'clean_up'
+        @pet.clean_up
+      when 'put_to_bed'
+        @pet.put_to_bed
+      when 'toss'
+        @pet.toss
+      when 'rock'
+        @pet.rock
+      when 'exit'
+        exit
+      else
+        p "нет такой команды #{command}"
+      end
+    end
+  end
+
+  def feed
+    @life += 2
     @hunger_indicator += 8
     @mood += 3
     @sleep_rate -= 1
     @toilet -= 2
+    off_time
   end
 
-  def play #поиграть
+  def play
+    @life -= 1
     @hunger_indicator -= 2
     @mood += 2
     @sleep_rate -= 1
     @toilet += 1
+    off_time
   end
 
-  def walk #выгуливать
+  def walk
+    @life += 1
     @hunger_indicator -= 2
     @mood += 2
     @sleep_rate += 1
     @toilet += 2
+    off_time
   end
 
-  def clean_up #убрать
+  def clean_up
+    @life += 2
     @hunger_indicator -= 2
     @mood += 2
     @sleep_rate -= 1
-    @toilet -= 1
+    @toilet += 3
+    off_time
   end
 
-  def put_to_bed #укладывать спать
+  def put_to_bed
+    @life -= 1
     @hunger_indicator -= 2
     @mood += 2
     @sleep_rate += 3
     @toilet -= 1
+    off_time
   end
 
-  def toss #подбрасывать
+  def toss
+    @life += 1
     @hunger_indicator -= 2
     @mood += 2
     @sleep_rate -= 1
     @toilet -= 1
+    off_time
   end
 
-  def rock #укачивать
+  def rock
+    @life += 2
     @hunger_indicator -= 2
     @mood += 2
     @sleep_rate -= 1
     @toilet -= 1
+    off_time
   end
+
 
   def minus_day
     off_time
     pet_inside
+  end
+
+  def help_table
+    puts "-----------------------------------------------------------------------------"
+    puts "pet_inside - выводит все важные состояния персонажа;
+feed - покормить;
+play - поиграть;
+walk - выгуливать;
+clean_up - убрать;
+put_to_bed - укладывать спать;
+toss - подбрасывать;
+rock - укачивать."
+    puts "-----------------------------------------------------------------------------"
   end
 
 
@@ -185,8 +223,29 @@ class Pet
     end
   end
 end
-Pet.new.pet_inside
+pet = Pet.new("Fhj")
+# pet.pet_inside
+# pet.help_table
+# pet.feed
+# pet.minus_day
+# pet.walk
+# pet.clean_up
 
-pet.minus_day
-pet.minus_day
-pet.minus_day
+# def add_pet
+#   p "Как назовешь питомца?"
+#   name = gets.chomp
+#   p "Имя твоего питомца #{name}!"
+#   p "Выбирите жывотное: попугай, кот, собака?"
+#   animal_name = gets.chomp
+#   if animal_name == "попугай"
+#     @pet = Parrot.new(name)
+#   elsif animal_name == "кот"
+#     @pet = Cat.new(name)
+#   elsif animal_name == "собака"
+#     p "ok"
+#     #@pet = Dog.new(name)
+#   else
+#     p "Не того выбрал животного!"
+#   end
+#   p "животное = #{@pet.class}, его имя =  #{@pet.name}"
+# end
