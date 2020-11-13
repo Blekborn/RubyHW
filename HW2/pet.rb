@@ -1,7 +1,7 @@
 class Pet
   attr_accessor :name
 
-  def initialize(name)
+  def initialize
     @name = name
     @life = 10
     @st_life = ""
@@ -14,11 +14,10 @@ class Pet
     @toilet = 9
     @st_toilet = ""
     @sleeping = false
-    p "#{name}"
+    name = gets.chomp
   end
 
   def pet_inside
-    p "-----------------------------------------------------------------------------"
     p "Сосотояние #{name}:"
     case @life
     when 8..10
@@ -69,37 +68,9 @@ class Pet
       @moods = "Я в гневе."
     end
     p "Настроение (1-10) сейчас #{@mood}. #{@moods}"
-    p "-----------------------------------------------------------------------------"
+    com_pet
   end
 
-  def commands
-    command = gets.strip.downcase
-  end
-  def com_pet
-    while true
-      command = commands
-      case command
-      when 'feed'
-        @pet.feed
-      when 'play'
-        @pet.play
-      when 'walk'
-        @pet.walk
-      when 'clean_up'
-        @pet.clean_up
-      when 'put_to_bed'
-        @pet.put_to_bed
-      when 'toss'
-        @pet.toss
-      when 'rock'
-        @pet.rock
-      when 'exit'
-        exit
-      else
-        p "нет такой команды #{command}"
-      end
-    end
-  end
 
   def feed
     @life += 2
@@ -108,6 +79,7 @@ class Pet
     @sleep_rate -= 1
     @toilet -= 2
     off_time
+    pet_inside
   end
 
   def play
@@ -117,6 +89,7 @@ class Pet
     @sleep_rate -= 1
     @toilet += 1
     off_time
+    pet_inside
   end
 
   def walk
@@ -126,6 +99,7 @@ class Pet
     @sleep_rate += 1
     @toilet += 2
     off_time
+    pet_inside
   end
 
   def clean_up
@@ -135,6 +109,7 @@ class Pet
     @sleep_rate -= 1
     @toilet += 3
     off_time
+    pet_inside
   end
 
   def put_to_bed
@@ -144,6 +119,7 @@ class Pet
     @sleep_rate += 3
     @toilet -= 1
     off_time
+    pet_inside
   end
 
   def toss
@@ -153,6 +129,7 @@ class Pet
     @sleep_rate -= 1
     @toilet -= 1
     off_time
+    pet_inside
   end
 
   def rock
@@ -162,8 +139,39 @@ class Pet
     @sleep_rate -= 1
     @toilet -= 1
     off_time
+    pet_inside
   end
 
+  def commands
+
+    command = gets.chomp.downcase
+  end
+
+  def com_pet
+    help_table
+    p "Введите комманду:"
+    command = commands
+    if command == 'feed'
+      feed
+    elsif command == 'play'
+      play
+    elsif command == 'walk'
+      walk
+    elsif command == 'clean_up'
+      clean_up
+    elsif command == 'put_to_bed'
+      put_to_bed
+    elsif command == 'toss'
+      toss
+    elsif command == 'rock'
+      rock
+    elsif command == 'exit'
+      exit
+    else
+      p "нет такой команды #{command}"
+
+    end
+  end
 
   def minus_day
     off_time
@@ -171,7 +179,7 @@ class Pet
   end
 
   def help_table
-    puts "-----------------------------------------------------------------------------"
+    puts "++++++++++++++++++++++++++++++++++++++++++++++++++++"
     puts "pet_inside - выводит все важные состояния персонажа;
 feed - покормить;
 play - поиграть;
@@ -180,7 +188,7 @@ clean_up - убрать;
 put_to_bed - укладывать спать;
 toss - подбрасывать;
 rock - укачивать."
-    puts "-----------------------------------------------------------------------------"
+    puts "+++++++++++++++++++++++++++++++++++++++++++++++++++++"
   end
 
 
@@ -223,13 +231,7 @@ rock - укачивать."
     end
   end
 end
-pet = Pet.new("Fhj")
-# pet.pet_inside
-# pet.help_table
-# pet.feed
-# pet.minus_day
-# pet.walk
-# pet.clean_up
+Pet.new.pet_inside
 
 # def add_pet
 #   p "Как назовешь питомца?"
