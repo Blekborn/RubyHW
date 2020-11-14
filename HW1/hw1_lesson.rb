@@ -1,3 +1,6 @@
+# https://gist.github.com/MaksGostroushko/25f7fe9c2a99b47dae0c81569e36f319
+
+
 # 1 An integer array is given. It is necessary to display first its elements with even indices, and then - with odd ones.
 number_two = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 p number_two.partition { |k| number_two.index(k) % 2 == 0 }
