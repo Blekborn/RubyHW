@@ -1,12 +1,6 @@
 require "forty_two/version"
-module FortyTwo
-  def self.forty_two?
-    p "HELLO"
+class Integer
+  def forty_two?
+    self == 42
   end
 end
-FortyTwo.forty_two?
-# module FortyTwo
-#   def self.forty_two?
-#     to_i == 42 || to_i.to_s == 42
-#   end
-# end
