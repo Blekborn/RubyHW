@@ -14,7 +14,6 @@ class Pet
     @toilet = 9
     @st_toilet = ""
     @sleeping = false
-    name = gets.chomp
   end
 
   def pet_inside
@@ -68,7 +67,7 @@ class Pet
       @moods = "Я в гневе."
     end
     p "Настроение (1-10) сейчас #{@mood}. #{@moods}"
-    com_pet
+    help_table
   end
 
 
@@ -142,36 +141,6 @@ class Pet
     pet_inside
   end
 
-  def commands
-
-    command = gets.chomp.downcase
-  end
-
-  def com_pet
-    help_table
-    p "Введите комманду:"
-    command = commands
-    if command == 'feed'
-      feed
-    elsif command == 'play'
-      play
-    elsif command == 'walk'
-      walk
-    elsif command == 'clean_up'
-      clean_up
-    elsif command == 'put_to_bed'
-      put_to_bed
-    elsif command == 'toss'
-      toss
-    elsif command == 'rock'
-      rock
-    elsif command == 'exit'
-      exit
-    else
-      p "нет такой команды #{command}"
-
-    end
-  end
 
   def minus_day
     off_time
@@ -181,20 +150,21 @@ class Pet
   def help_table
     puts "++++++++++++++++++++++++++++++++++++++++++++++++++++"
     puts "pet_inside - выводит все важные состояния персонажа;
-feed - покормить;
-play - поиграть;
-walk - выгуливать;
-clean_up - убрать;
-put_to_bed - укладывать спать;
-toss - подбрасывать;
-rock - укачивать."
+          feed - покормить;
+          play - поиграть;
+          walk - выгуливать;
+          clean_up - убрать;
+          put_to_bed - укладывать спать;
+          toss - подбрасывать;
+          day - прошел день;
+          rock - укачивать."
     puts "+++++++++++++++++++++++++++++++++++++++++++++++++++++"
   end
-
 
   private
 
   def off_time
+    @life -= 1
     @hunger_indicator -= 1
     @mood -= 1
     @sleep_rate -= 1
@@ -224,30 +194,10 @@ rock - укачивать."
       @toilet = 1
     end
 
-    @life = (@hunger_indicator + @mood + @sleep_rate + @toilet) / 4
+    @life = (@life + @hunger_indicator + @mood + @sleep_rate + @toilet) / 5
     if @life <= 1
       p "GAME OVER!"
       exit
     end
   end
 end
-Pet.new.pet_inside
-
-# def add_pet
-#   p "Как назовешь питомца?"
-#   name = gets.chomp
-#   p "Имя твоего питомца #{name}!"
-#   p "Выбирите жывотное: попугай, кот, собака?"
-#   animal_name = gets.chomp
-#   if animal_name == "попугай"
-#     @pet = Parrot.new(name)
-#   elsif animal_name == "кот"
-#     @pet = Cat.new(name)
-#   elsif animal_name == "собака"
-#     p "ok"
-#     #@pet = Dog.new(name)
-#   else
-#     p "Не того выбрал животного!"
-#   end
-#   p "животное = #{@pet.class}, его имя =  #{@pet.name}"
-# end
