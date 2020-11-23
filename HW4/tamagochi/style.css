@@ -1,0 +1,40 @@
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+ul {
+    list-style: none !important;
+}
+
+body {
+    text-align: center;
+}
+.hero {
+    width: 1200px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.name_pet {
+    color: #32bbb5;
+    font-weight: bold;
+    font-size: 25px;
+    display: block;
+    margin-bottom: 50px;
+}
+.breed {
+    font-size: 30px;
+    color: #bb3f4b;
+    display: block;
+}
+.health_status {
+    text-align: left;
+    float: left;
+    line-height: 20px;
+    color: #8b6b1e;
+}
+.commands {
+    float: right;
+    line-height: 25px;
+}
