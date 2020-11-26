@@ -102,7 +102,7 @@ class UiMenu < Pet
       <li>rock - укачивать</li>
   </ul>
 "
-    HtmlTama.new.create_html(content,true, filename)
+    HtmlTama.new.create_html(content, true, filename)
   end
 end
-UiMenu.new.com_pet
+#UiMenu.new.com_pet
