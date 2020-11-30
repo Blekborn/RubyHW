@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Tamagochi</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+<div class="container text-center">
+  <div class="img_es img-responsive">
+    <img src="https://vetonline.pro/media/cache/blog_post_view/images/post/dogs-bigl.jpg" alt="Dog" />
+    <p class="text-warning">feed:<%= @pet.feed %></p>
+    <p class="text-error">play:<%= @pet.play %></p>
+    <p class="text-info">walk:<%= @pet.walk %></p>
+    <p class="text-success">toss:<%= @pet.toss %></p>
+  </div>
+  <form class="center-block" action="/change" method="get">
+    <button class="btn btn-primary" name="feed" value="feed">feed</button>
+    <button class="btn btn-info" name="play" value="play">play</button>
+    <button class="btn btn-success" name="walk" value="wlk">walk</button>
+    <button class="btn btn-warning" name="clen_up" value="clean_up">clean_up</button>
+    <button class="btn btn-primary" name="put_to_bed" value="put_to_bed">put_to_bed</button>
+    <button class="btn btn-danger" name="toss" value="toss">toss</button>
+    <button class="btn btn-warning" name="day" value="day">-day</button>
+  </form>
+</div>
+</body>
+</html>
