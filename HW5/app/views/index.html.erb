@@ -10,21 +10,23 @@
 <body>
 <div class="container text-center">
   <div class="img_es img-responsive">
-    <img src="https://vetonline.pro/media/cache/blog_post_view/images/post/dogs-bigl.jpg" alt="Dog" />
-    <p class="text-warning">feed:<%= @pet.feed %></p>
-    <p class="text-error">play:<%= @pet.play %></p>
-    <p class="text-info">walk:<%= @pet.walk %></p>
-    <p class="text-success">toss:<%= @pet.toss %></p>
+    <h2>Pet name: <%= name %></h2>
+    <img src="https://vetonline.pro/media/cache/blog_post_view/images/post/dogs-bigl.jpg" alt="Dog"/>
+<!--    <p class="text-warning">life:<%#= get(life) %></p>-->
+<!--    <p class="text-error">hunger_indicator:<%#= get(hunger_indicator) %></p>-->
+<!--    <p class="text-info">mood:<%#= get(mood) %></p>-->
+<!--    <p class="text-success">sleep_rate:<%#= get(sleep_rate) %></p>-->
+<!--    <p class="text-error">toilet:<%#= get(toilet) %></p>-->
   </div>
-  <form class="center-block" action="/change" method="get">
-    <button class="btn btn-primary" name="feed" value="feed">feed</button>
-    <button class="btn btn-info" name="play" value="play">play</button>
-    <button class="btn btn-success" name="walk" value="wlk">walk</button>
-    <button class="btn btn-warning" name="clen_up" value="clean_up">clean_up</button>
-    <button class="btn btn-primary" name="put_to_bed" value="put_to_bed">put_to_bed</button>
-    <button class="btn btn-danger" name="toss" value="toss">toss</button>
-    <button class="btn btn-warning" name="day" value="day">-day</button>
-  </form>
+<!--  <form class="center-block" action="/" method="get">-->
+<!--    <button class="btn btn-primary" name="life" value="life">life</button>-->
+<!--    <button class="btn btn-info" name="hunger_indicator" value="hunger_indicator">hunger_indicator</button>-->
+<!--    <button class="btn btn-success" name="mood" value="mood">mood</button>-->
+<!--    <button class="btn btn-warning" name="clen_up" value="clean_up">clean_up</button>-->
+<!--    <button class="btn btn-primary" name="sleep_rate" value="sleep_rate">sleep_rated</button>-->
+<!--    <button class="btn btn-danger" name="toilet" value="toilet">toilet</button>-->
+<!--    <button class="btn btn-warning" name="day" value="day">-day</button>-->
+<!--  </form>-->
 </div>
 </body>
 </html>

@@ -1,3 +1,0 @@
-module Setting
-
-end
