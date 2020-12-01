@@ -6,27 +6,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Tamagochi</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="/public/style.css">
 </head>
 <body>
-<div class="container text-center">
-  <div class="img_es img-responsive">
+<div class="pet_class text-center">
+  <div class="img_es">
     <h2>Pet name: <%= name %></h2>
-    <img src="https://vetonline.pro/media/cache/blog_post_view/images/post/dogs-bigl.jpg" alt="Dog"/>
-<!--    <p class="text-warning">life:<%#= get(life) %></p>-->
-<!--    <p class="text-error">hunger_indicator:<%#= get(hunger_indicator) %></p>-->
-<!--    <p class="text-info">mood:<%#= get(mood) %></p>-->
-<!--    <p class="text-success">sleep_rate:<%#= get(sleep_rate) %></p>-->
-<!--    <p class="text-error">toilet:<%#= get(toilet) %></p>-->
+    <img src="https://vetonline.pro/media/cache/blog_post_view/images/post/dogs-bigl.jpg" class="img-fluid img-circle" alt="Dog"/>
+    <p class="text-warning">life:<%= get('life') %></p>
+    <p class="text-error">hunger_indicator:<%= get('hunger_indicator') %></p>
+    <p class="text-info">mood:<%= get('mood') %></p>
+    <p class="text-success">sleep_rate:<%= get('sleep_rate') %></p>
+    <p class="text-error">toilet:<%= get('toilet') %></p>
   </div>
-<!--  <form class="center-block" action="/" method="get">-->
-<!--    <button class="btn btn-primary" name="life" value="life">life</button>-->
-<!--    <button class="btn btn-info" name="hunger_indicator" value="hunger_indicator">hunger_indicator</button>-->
-<!--    <button class="btn btn-success" name="mood" value="mood">mood</button>-->
-<!--    <button class="btn btn-warning" name="clen_up" value="clean_up">clean_up</button>-->
-<!--    <button class="btn btn-primary" name="sleep_rate" value="sleep_rate">sleep_rated</button>-->
-<!--    <button class="btn btn-danger" name="toilet" value="toilet">toilet</button>-->
-<!--    <button class="btn btn-warning" name="day" value="day">-day</button>-->
-<!--  </form>-->
+  <form class="center-block" action="/options_pet" method="get">
+    <button class="btn btn-outline-primary btn-block" name="life" value="life">life</button>
+    <button class="btn btn-outline-info btn-block" name="hunger_indicator" value="hunger_indicator">hunger_indicator</button>
+    <button class="btn btn-outline-success btn-block" name="mood" value="mood">mood</button>
+<!--    <button class="btn btn-outline-warning btn-block" name="clen_up" value="clean_up">clean_up</button>-->
+<!--    <button class="btn btn-outline-primary btn-block" name="sleep_rate" value="sleep_rate">sleep_rated</button>-->
+    <button class="btn btn-outline-danger btn-block" name="toilet" value="toilet">toilet</button>
+<!--    <button class="btn btn-outline-warning btn-block" name="day" value="day">-day</button>-->
+  </form>
 </div>
 </body>
 </html>

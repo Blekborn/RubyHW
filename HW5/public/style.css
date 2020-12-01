@@ -1,0 +1,46 @@
+body {
+    background: #ffd700;
+}
+
+.text-primary {
+    font-size: 25px;
+}
+
+.hero {
+    margin: 100px auto 0;
+    padding: 100px;
+    border: 1px solid #111;
+    border-radius: 30%;
+}
+.pet_class {
+    background: aqua;
+    width: 500px;
+    margin: 20px auto 0;
+    padding: 50px 40px;
+    border: 1px solid #111;
+    border-radius: 45%;
+}
+.pet_class img {
+    width: 250px;
+    border-radius: 30%;
+}
+.img_es p {
+    margin-bottom: 5px;
+}
+.btn {
+    width: 40%;
+    margin: 0 auto;
+}
+.h3_complete {
+    margin: 50px 0;
+    font-size: 50px;
+}
+
+.slown {
+    font-size: 30px;
+    margin: 40px 0 0;
+}
+
+.img-pets img {
+    width: 500px;
+}

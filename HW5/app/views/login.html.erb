@@ -6,14 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Login</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link href="/public/style.css" rel="stylesheet" />
 </head>
 <body>
-<div class="container col-md-offset-8 col-md-4">
+<div class="hero col-md-offset-8 col-md-4">
   <p class="text-primary text-center">Enter name for your pet: </p>
   <form action="/options" method="get" class="form-group  ">
     <div class="form-group">
       <label for="name">Name pet:</label>
-      <input type="text" class="form-control" id="name" placeholder="Animal name">
+      <input type="text" name="name" class="form-control" id="name" placeholder="Animal name">
     </div>
     <button type="submit" class="btn btn-primary btn-lg" value="Start">Start</button>
   </form>

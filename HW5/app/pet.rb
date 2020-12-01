@@ -12,19 +12,20 @@ class Pet
 
   def initialize(env)
     @request = Rack::Request.new(env)
-    @animal_name = ''
+    #@animal_name = ''
     @life = 10
-    @st_life = ''
+    #@st_life = ''
     @hunger_indicator = 10
-    @hunger = ''
+    #@hunger = ''
     @mood = 10
-    @moods = ''
+    #@moods = ''
     @sleep_rate = 10
-    @sleep = ''
+    #@sleep = ''
     @toilet = 9
-    @st_toilet = ''
-    @sleeping = false
-    @emoji = ''
+    #@st_toilet = ''
+    #@sleeping = false
+    #@emoji = ''
+    $TOTAL = %w[life hunger_indicator mood sleep_rate toilet]
   end
 
   def response
@@ -74,6 +75,7 @@ class Pet
     name = @request.cookies['name'].delete(' ')
     name.empty? ? 'Pet' : @request.cookies['name']
   end
+
 
   def get(attr)
     @request.cookies["#{attr}"].to_i
